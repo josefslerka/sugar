@@ -15,9 +15,9 @@ get_likers <- function(toAnalyze, write = FALSE, maxLikes = 1) {
       from_id = character(),from_name = character(), message = character(), created_time =
         character(), likes_count = character(), id = character(),post_id = character()
     )
-  if(write) { 
-      write.table(dfLikes, "export.csv", row.names=F, na="NA", append = TRUE, quote= FALSE, sep = ",", col.names = T)
-  }
+  # if(write) { 
+  #     write.table(dfLikes, "export.csv", row.names=F, na="NA", append = TRUE, quote= FALSE, sep = ",", col.names = T)
+  # }
   i <- 1
   total <- length(toAnalyze)
   for (v in toAnalyze) {
@@ -28,9 +28,9 @@ get_likers <- function(toAnalyze, write = FALSE, maxLikes = 1) {
         getPost(v, token, n = maxLikes, likes = TRUE, comments = FALSE)
       dfPost <- as.data.frame(post$likes)
       dfPost$post_id <- v
-      if(write) {
-         write.table(dfPost, "export.csv", row.names=F, na="NA", append = TRUE, quote= FALSE, sep = ",", col.names = F)
-      } 
+  #     if(write) {
+  #        write.table(dfPost, "export.csv", row.names=F, na="NA", append = TRUE, quote= FALSE, sep = ",", col.names = F)
+  #     } 
       dfLikes <- rbind(dfPost,dfLikes)
     }, error = function(errorCondition) {
       print(errorCondition)
