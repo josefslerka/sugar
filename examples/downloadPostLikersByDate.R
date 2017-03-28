@@ -7,7 +7,7 @@ library("stringr")
 library("plyr")
 library("sugar")
 
-token <- fbOAuthSugar(app_id="105261629503772", app_secret="3ae28d93ced1153e5c1a4142f1686a38")
+token <- fbOAuthSugar(app_id="", app_secret="")
 Sys.sleep(4)
 graphFacebook = "https://graph.facebook.com/"
 

@@ -1,6 +1,6 @@
 #' A fbOAuth Function
 #'
-#' This function allows pretty printing of values
+#' This function allows pretty printing of values aaa
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords printLog
 #' @export
