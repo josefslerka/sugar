@@ -13,25 +13,7 @@ graphFacebook = "https://graph.facebook.com/"
 
 toAnalyze <- c("hooligans.info")
 
-
-dfPages <- data.frame()
-for (i in toAnalyze) {
-
-    requests <- tryCatch({
-        json_file <- paste0(graphFacebook, i, collapse = "")
-        json_data <- callAPI(url = json_file, token = token) 
-        cat(i)
-        cat("\n")
-        cat(json_data$name)
-        pagenameTmp <- data.frame(i, json_data$name, json_data$id)
-        dfPages <- rbind(dfPages, pagenameTmp)
-    }, error = function(errorCondition) {
-      print(errorCondition)
-    })
-
-
-}
-colnames(dfPages) <- c("username", "name", "id")
+dfPages <- getPagesDetail(toAnalyze)
 
 
 # configuration 
