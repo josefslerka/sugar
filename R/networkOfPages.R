@@ -25,7 +25,7 @@ networkOfPages <- function(toAnalyze,deep=3, saveToTable = FALSE) {
 						for(v in toAnalyze) {
 							dfTmp <- listOfPages(v)
 							dfNetwork <- rbind(dfTmp,dfNetwork)
-							write.table(dfTmp, "succesNetwork.txt", row.names=F, col.names=F, append=T)
+							write.table(dfTmp, "succesNetwork1.txt", row.names=F, col.names=F, append=T)
 
 						}
 						colnames(dfNetwork) <- c("from", "to", "from_name", "to_name")

@@ -28,7 +28,7 @@ listOfPages <- function(idPage)
 					print(namePage)
 				
 								x = 0	
-								url <- paste0(graphFacebook, idPage, "/likes", collapse="")
+								url <- paste0(graphFacebook, idPage, "/likes?limit=25", collapse="")
 
 								while(x==0) {
 								json <- callAPI(url = url, token = access_token) 
@@ -41,7 +41,9 @@ listOfPages <- function(idPage)
 											df <- rbind(df,dfPages)
 										}
 
+
 								if(exists(json$paging$`next`)) { x = 0 } else { url <- json$paging$`next`  }
+
 								}
 
 
