@@ -8,7 +8,8 @@
 #' a <- "1234"
 #' cat_function(a)
 #' 
-getPagesDetail <- function(toAnalyze) {
+#' 
+getPagesDetail <- function(toAnalyze, graphFacebook="https://graph.facebook.com/v2.3/") {
 
 	dfPages <- data.frame()
 	for(i in toAnalyze) {
