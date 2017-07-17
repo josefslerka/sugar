@@ -18,7 +18,15 @@ getPagePostsByDate <- function(idPage, fromDate, toDate, interations = 10000) {
         from <- as.numeric(as.POSIXct(fromDate, format="%Y-%m-%d"))
         to <-  as.numeric(as.POSIXct(toDate, format="%Y-%m-%d"))
 
-        url <- paste0("https://graph.facebook.com/v2.9/", idPage, "/posts?since=", from, "&until=", to, sep="")
+        url <- paste0("https://graph.facebook.com/v2.9/", idPage, "/posts?fields=picture,actions,message,link,created_time,id&",
+          "since=", from, "&until=", to, 
+          sep="")
+
+        url <- paste0("https://graph.facebook.com/v2.9/", idPage, 
+          "/posts?fields=picture,actions,message,link,created_time,id&until=",
+          from,
+          "&since=",
+          to, sep="")
         df <- data.frame()        
         urlCount <- 1
 
@@ -32,7 +40,7 @@ getPagePostsByDate <- function(idPage, fromDate, toDate, interations = 10000) {
               
 
               id <- json_data$data[[i]]$id
-              idPage <- json_data$data[[i]]$from$id
+              idPage <- idPage
               name <- json_data$data[[i]]$from$name
               message <- json_data$data[[i]]$message
               picture <- json_data$data[[i]]$picture
