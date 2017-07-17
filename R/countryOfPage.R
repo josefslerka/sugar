@@ -1,12 +1,11 @@
 #' A countryOfPage Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function return most active country for page.
+#' @param idPage Facebook page id
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' topCountry <- countryOfPage("stunome")
 #'
 #' 
 countryOfPage <- function(idPage) {

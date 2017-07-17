@@ -1,6 +1,6 @@
 #' A fbOAuth Function
 #'
-#' This function allows pretty printing of values aaa
+#' This function temporary replace fbOAuth. Now is depricated.
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords printLog
 #' @export
