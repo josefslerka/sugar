@@ -4,7 +4,7 @@
 \alias{getPagesDetail}
 \title{A getPagesDetail Function}
 \usage{
-getPagesDetail(toAnalyze, graphFacebook = "https://graph.facebook.com/")
+getPagesDetail(toAnalyze)
 }
 \arguments{
 \item{toAnalyze}{vector with id of Facebook pages}

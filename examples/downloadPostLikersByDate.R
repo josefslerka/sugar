@@ -143,7 +143,7 @@ for(PagetoAnalyze in toDownload) {
 Sys.sleep(4)      
       #### likers
       if (likers == "1") {
-      dfLikes <- get_likers(page$id, TRUE, maxLikes)
+      dfLikes <- get_likers(page$id, maxLikes)
       # ulozi seznam lajkujicich a posty, ktere lajkovali
       fileName <- paste0(PagetoAnalyze, "_likes.csv", collapse = "")
       write.csv(dfLikes, fileName)

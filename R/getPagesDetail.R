@@ -9,8 +9,8 @@
 #' dfPages <- getPagesDetail(toAnalyze)
 #' 
 #' 
-getPagesDetail <- function(toAnalyze, graphFacebook="https://graph.facebook.com/") {
-
+getPagesDetail <- function(toAnalyze) {
+	graphFacebook="https://graph.facebook.com/v2.6/"
 	dfPages <- data.frame()
 	for(i in toAnalyze) {
 
@@ -18,7 +18,7 @@ getPagesDetail <- function(toAnalyze, graphFacebook="https://graph.facebook.com/
 
 			   	result <- tryCatch({
 					
-					json_file <- paste0(graphFacebook, i, collapse="")
+					json_file <- paste0(graphFacebook, i, "?fields=about,name,talking_about_count,country_page_likes", collapse="")
 					json_data <- getURL(json_file)
 			        json_data <- callAPI(url = json_file, token = token) 
 					print(paste0(i, " ",json_data$name,sep=""))
