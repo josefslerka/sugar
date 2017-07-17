@@ -43,7 +43,7 @@ getPagesDetail <- function(toAnalyze) {
 
 
 	
-	colnames(dfPages) <- c("username", "name", "id","about", "talking_about_count","likes")
+	colnames(dfPages) <- c("username", "name", "idPage","about", "talking_about_count","likes")
 	dfPages	
 }
 

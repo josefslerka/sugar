@@ -10,18 +10,17 @@
 #' 
 getPostsByDate <- function(idPage, fromDate, toDate) {
 
-  a <- getPagePostsByDate(idPage,fromDate, toDate)
+  # a <- getPagePostsByDate(idPage,fromDate, toDate)
   b <- getPagePostsInteractionsByDate(idPage, fromDate, toDate)
-  c <- merge(b,a, by="id")
-  c <- unique(c)
+  # c <- merge(b,a, by="id")
+  c <- unique(b)
   dfTmp <- data.frame()
 
   for(i in c$id) {
     printLog(i)
         requests <- tryCatch({
-
-    tmp <- getPagePostsInteractionsDetail(i)
-    dfTmp <- rbind(dfTmp, tmp)
+            tmp <- getPagePostsInteractionsDetail(i)
+            dfTmp <- rbind(dfTmp, tmp)
         }, error = function(errorCondition) {
       print(errorCondition)
 

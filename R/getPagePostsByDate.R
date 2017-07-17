@@ -10,7 +10,7 @@
 #' 
 getPagePostsByDate <- function(idPage, fromDate, toDate, interations = 10000) {
 
-        Threshold <- interations
+        Threshold <- 10000
 
 # fromDate <- "2015-01-01"
 # toDate <- "2015-02-01"
@@ -18,15 +18,15 @@ getPagePostsByDate <- function(idPage, fromDate, toDate, interations = 10000) {
         from <- as.numeric(as.POSIXct(fromDate, format="%Y-%m-%d"))
         to <-  as.numeric(as.POSIXct(toDate, format="%Y-%m-%d"))
 
-        url <- paste0("https://graph.facebook.com/v2.9/", idPage, "/posts?fields=picture,actions,message,link,created_time,id&",
-          "since=", from, "&until=", to, 
-          sep="")
-
         url <- paste0("https://graph.facebook.com/v2.9/", idPage, 
           "/posts?fields=picture,actions,message,link,created_time,id&until=",
-          from,
+          to,
           "&since=",
-          to, sep="")
+          from, sep="")
+
+
+
+
         df <- data.frame()        
         urlCount <- 1
 

@@ -97,7 +97,7 @@ toAnalyze <- c(
 dfPages <- getPagesDetail(toAnalyze)
 
 # configuration 
-comments <- "0" # comment downloading?
+comments <- "1" # comment downloading?
 likers <- "1" # likers downloading?
 engagers <- "0" # engagers downloading?
 
