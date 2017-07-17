@@ -10,13 +10,12 @@ listOfPages(idPage)
 \item{love}{Do you love cats? Defaults to TRUE.}
 }
 \description{
-This function allows pretty printing of values
+This function return list of pages liked by page.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+
+liked <- listOfPages("stunome")
 
 
 }
 \keyword{printLog}
-

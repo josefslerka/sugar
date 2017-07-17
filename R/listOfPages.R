@@ -1,12 +1,12 @@
 #' A listOfPages Function
 #'
-#' This function allows pretty printing of values
+#' This function return list of pages liked by page.
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#'
+#' liked <- listOfPages("stunome")
 #'
 #' 
 listOfPages <- function(idPage)

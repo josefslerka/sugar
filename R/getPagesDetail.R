@@ -1,15 +1,15 @@
 #' A getPagesDetail Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function return basic info about pages. Included id, name, about, likes and talling talking_about_count
+#' @param toAnalyze vector with id of Facebook pages
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' toAnalyze <- c("stunome")
+#' dfPages <- getPagesDetail(toAnalyze)
 #' 
 #' 
-getPagesDetail <- function(toAnalyze, graphFacebook="https://graph.facebook.com/v2.3/") {
+getPagesDetail <- function(toAnalyze, graphFacebook="https://graph.facebook.com/") {
 
 	dfPages <- data.frame()
 	for(i in toAnalyze) {

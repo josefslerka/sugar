@@ -8,7 +8,7 @@
 #' a <- "1234"
 #' cat_function(a)
 #' 
-getPageNewByDate <- function(idPage, fromDate, toDate) {
+getPostsByDate <- function(idPage, fromDate, toDate) {
 
   a <- getPagePostsByDate(idPage,fromDate, toDate)
   b <- getPagePostsInteractionsByDate(idPage, fromDate, toDate)

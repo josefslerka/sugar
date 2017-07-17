@@ -18,4 +18,3 @@ cat_function(a)
 
 }
 \keyword{printLog}
-

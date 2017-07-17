@@ -1,15 +1,17 @@
 #' A networkOfPages Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function download data frame with pages liked by page network. Results are stored in succesNetwork.txt data table. 
+#' Function return also data frame with same value.
+#' @param toAnalyze vector with Facebook pages ids.
+#' @param deep how many steps you go deeper, default is 2
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' toAnalyze <- c("stunome")
+#' network <- networkOfPages(toAnalyze, 1)
 #'
 #' 
-networkOfPages <- function(toAnalyze,deep=3, saveToTable = FALSE) {
+networkOfPages <- function(toAnalyze,deep=2) {
 
 		dfNetwork  <- data.frame(from=character(), to=character(),from_name=character(), to_name=character()) 
 
@@ -25,7 +27,7 @@ networkOfPages <- function(toAnalyze,deep=3, saveToTable = FALSE) {
 						for(v in toAnalyze) {
 							dfTmp <- listOfPages(v)
 							dfNetwork <- rbind(dfTmp,dfNetwork)
-							write.table(dfTmp, "succesNetwork1.txt", row.names=F, col.names=F, append=T)
+							write.table(dfTmp, "succesNetwork.txt", row.names=F, col.names=F, append=T)
 
 						}
 						colnames(dfNetwork) <- c("from", "to", "from_name", "to_name")

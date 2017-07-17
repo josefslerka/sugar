@@ -17,4 +17,3 @@ a <- "1234"
 cat_function(a)
 }
 \keyword{printLog}
-

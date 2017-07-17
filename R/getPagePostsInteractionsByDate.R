@@ -1,21 +1,20 @@
 #' A getPagePostsInteractionsByDate Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function return besic info about pages posts by date. This function is just part of getPageNewByDate function
+#' @param idPage page id
+#' @param fromDate first day of period
+#' @param toDate last day of period
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' posts <- getPagePostsInteractionsByDate("stunome")
+#' 
 #' 
 getPagePostsInteractionsByDate <- function(idPage, fromDate, toDate, interations = 10000) {
 
       Threshold <- interations
-
-# fromDate <- "2015-01-01"
-# toDate <- "2015-02-01"
-from <- as.numeric(as.POSIXct(fromDate, format="%Y-%m-%d"))
-to <-  as.numeric(as.POSIXct(toDate, format="%Y-%m-%d"))
+      from <- as.numeric(as.POSIXct(fromDate, format="%Y-%m-%d"))
+      to <-  as.numeric(as.POSIXct(toDate, format="%Y-%m-%d"))
 
         
 

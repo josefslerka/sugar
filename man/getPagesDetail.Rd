@@ -4,18 +4,18 @@
 \alias{getPagesDetail}
 \title{A getPagesDetail Function}
 \usage{
-getPagesDetail(toAnalyze)
+getPagesDetail(toAnalyze, graphFacebook = "https://graph.facebook.com/")
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{toAnalyze}{vector with id of Facebook pages}
 }
 \description{
-This function allows pretty printing of values
+This function return basic info about pages. Included id, name, about, likes and talling talking_about_count
 }
 \examples{
-a <- "1234"
-cat_function(a)
+toAnalyze <- c("stunome")
+dfPages <- getPagesDetail(toAnalyze)
+
 
 }
 \keyword{printLog}
-

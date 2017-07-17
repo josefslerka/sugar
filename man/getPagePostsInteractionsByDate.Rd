@@ -7,15 +7,18 @@
 getPagePostsInteractionsByDate(idPage, fromDate, toDate, interations = 10000)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{idPage}{page id}
+
+\item{fromDate}{first day of period}
+
+\item{toDate}{last day of period}
 }
 \description{
-This function allows pretty printing of values
+This function return besic info about pages posts by date. This function is just part of getPageNewByDate function
 }
 \examples{
-a <- "1234"
-cat_function(a)
+posts <- getPagePostsInteractionsByDate("stunome")
+
 
 }
 \keyword{printLog}
-

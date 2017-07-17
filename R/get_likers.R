@@ -1,23 +1,21 @@
 #' A get_likers Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function rerturn data frame with likers for specic vector with posts Ids.
+#' @param toAnalyze vector with posts ids.
+#' @param maxLikes max count of likes under posts
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' toAnalyze <- "90002267161_10155520966952162"
+#' dfLikers <- get_likers(toAnalyze, 1000)
 #' 
-get_likers <- function(toAnalyze, write = FALSE, maxLikes = 1) {
+get_likers <- function(toAnalyze, maxLikes = 1) {
 
   dfLikes <-
     data.frame(
       from_id = character(),from_name = character(), message = character(), created_time =
         character(), likes_count = character(), id = character(),post_id = character()
     )
-  # if(write) { 
-  #     write.table(dfLikes, "export.csv", row.names=F, na="NA", append = TRUE, quote= FALSE, sep = ",", col.names = T)
-  # }
   i <- 1
   total <- length(toAnalyze)
   for (v in toAnalyze) {
@@ -28,9 +26,6 @@ get_likers <- function(toAnalyze, write = FALSE, maxLikes = 1) {
         getPost(v, token, n = maxLikes, likes = TRUE, comments = FALSE)
       dfPost <- as.data.frame(post$likes)
       dfPost$post_id <- v
-  #     if(write) {
-  #        write.table(dfPost, "export.csv", row.names=F, na="NA", append = TRUE, quote= FALSE, sep = ",", col.names = F)
-  #     } 
       dfLikes <- rbind(dfPost,dfLikes)
     }, error = function(errorCondition) {
       print(errorCondition)

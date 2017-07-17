@@ -4,19 +4,21 @@
 \alias{networkOfPages}
 \title{A networkOfPages Function}
 \usage{
-networkOfPages(toAnalyze, deep = 3, saveToTable = FALSE)
+networkOfPages(toAnalyze, deep = 2)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{toAnalyze}{vector with Facebook pages ids.}
+
+\item{deep}{how many steps you go deeper, default is 2}
 }
 \description{
-This function allows pretty printing of values
+This function download data frame with pages liked by page network. Results are stored in succesNetwork.txt data table. 
+Function return also data frame with same value.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+toAnalyze <- c("stunome")
+network <- networkOfPages(toAnalyze, 1)
 
 
 }
 \keyword{printLog}
-
