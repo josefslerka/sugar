@@ -94,12 +94,13 @@ toAnalyze <- c(
 
   )
 
+toAnalyze <- c("sobotka.bohuslav")
 dfPages <- getPagesDetail(toAnalyze)
 
 # configuration 
 comments <- "1" # comment downloading?
 likers <- "1" # likers downloading?
-engagers <- "0" # engagers downloading?
+engagers <- "1" # engagers downloading?
 
 fromDate <- "2017-06-01" # filter dataset by date
 untilDate <- "2017-07-01"# filter dataset by date
@@ -120,30 +121,30 @@ for(PagetoAnalyze in toDownload) {
   retryResult <- try(
     retry({
       
-      page <- getPostsByDate(PagetoAnalyze,fromDate,untilDate)
-      page$date <- format(as.POSIXlt(page$created_time))
+      dfPagePosts <- getPostsByDate(PagetoAnalyze,fromDate,untilDate)
+      dfPagePosts$date <- format(as.POSIXlt(dfPagePosts$created_time))
 
       #  ulozi soubor s posty stranky
       fileName <- paste0(PagetoAnalyze, "_posts.csv", collapse = "")
-      write.csv(page, fileName)
+      write.csv(dfPagePosts, fileName)
       
-      page$likes_count <- as.numeric(page$likes_count)
-      page$comments_count <- as.numeric(page$comments_count)
+      dfPagePosts$likes_count <- as.numeric(dfPagePosts$likes_count)
+      dfPagePosts$comments_count <- as.numeric(dfPagePosts$comments_count)
 
-      maxLikes <- max(page$likes_count)
-      maxComments <- max(page$comments_count)
+      maxLikes <- max(dfPagePosts$likes_count)
+      maxComments <- max(dfPagePosts$comments_count)
       
 
 
       printLog(PagetoAnalyze, " complete")
-      cat(nrow(page), " posts\n", "maxLikes: ", maxLikes, "\nmaxComments: ", maxComments, "\n", sep="")
+      cat(nrow(dfPagePosts), " posts\n", "maxLikes: ", maxLikes, "\nmaxComments: ", maxComments, "\n", sep="")
       if (maxLikes < 0 || maxComments < 0) {
         stop("Got invalid maxLikes or maxComments, let's try this again.")
       }
 Sys.sleep(4)      
       #### likers
       if (likers == "1") {
-      dfLikes <- get_likers(page$id, maxLikes)
+      dfLikes <- get_likers(dfPagePosts$id, maxLikes)
       # ulozi seznam lajkujicich a posty, ktere lajkovali
       fileName <- paste0(PagetoAnalyze, "_likes.csv", collapse = "")
       write.csv(dfLikes, fileName)
@@ -151,7 +152,7 @@ Sys.sleep(4)
 
       #### engagers
       if (engagers == "1") {
-      dfEngagers <- get_engagers(page$id, maxLikes)
+      dfEngagers <- get_engagers(dfPagePosts$id, maxLikes)
       # ulozi seznam lajkujicich a posty, ktere lajkovali
       fileName <- paste0(PagetoAnalyze, "_engagers.csv", collapse = "")
       write.csv(dfEngagers, fileName)
@@ -162,7 +163,7 @@ Sys.sleep(4)
 Sys.sleep(4)
       #### stazeni komentaru
       if (comments == "1") {
-        dfComments <- get_comments(page$id, maxComments)
+        dfComments <- get_comments(dfPagePosts$id, maxComments)
         fileName <- paste0(PagetoAnalyze, "_comments.csv", collapse = "")
         write.csv(dfComments, fileName)
       }
