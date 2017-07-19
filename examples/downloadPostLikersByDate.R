@@ -94,16 +94,16 @@ toAnalyze <- c(
 
   )
 
-toAnalyze <- c("sobotka.bohuslav")
+# toAnalyze <- c("sobotka.bohuslav")
 dfPages <- getPagesDetail(toAnalyze)
 
 # configuration 
 comments <- "1" # comment downloading?
 likers <- "1" # likers downloading?
-engagers <- "1" # engagers downloading?
+engagers <- "0" # engagers downloading?
 
-fromDate <- "2017-06-01" # filter dataset by date
-untilDate <- "2017-07-01"# filter dataset by date
+fromDate <- "2017-07-01" # filter dataset by date
+untilDate <- "2017-07-17"# filter dataset by date
 retryAttempts <- 1 # number of retry
 
 
