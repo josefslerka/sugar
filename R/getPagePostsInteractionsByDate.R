@@ -19,8 +19,8 @@ getPagePostsInteractionsByDate <- function(idPage, fromDate, toDate, interations
 from <- as.numeric(as.POSIXct(fromDate, format="%Y-%m-%d"))
 to <-  as.numeric(as.POSIXct(toDate, format="%Y-%m-%d"))
 
-        
-
+        name <- getPagesDetail(idPage)
+        name <- as.character(name$name)
 
         url <- paste0("https://graph.facebook.com/v2.6/", idPage, "/posts?since=", from, "&until=", to,"&fields=picture,actions,message,link,created_time,id,status_type,likes.summary(1).limit(0),comments.summary(1).limit(0),reactions.summary(1).limit(0),shares", sep="")
         df <- data.frame()        
@@ -40,7 +40,7 @@ to <-  as.numeric(as.POSIXct(toDate, format="%Y-%m-%d"))
 
               id <- json_data$data[[i]]$id
               idPage <- idPage
-              name <- json_data$data[[i]]$from$name
+              name <- name
               message <- json_data$data[[i]]$message
               picture <- json_data$data[[i]]$picture
               link <- json_data$data[[i]]$link
@@ -63,7 +63,7 @@ to <-  as.numeric(as.POSIXct(toDate, format="%Y-%m-%d"))
               if(is.null(likes_count)) { likes_count = ""}
               if(is.null(comments_count)) { comments_count = ""}
 
-              dfTmp <- data.frame(id, idPage, message, picture, link, created_time, status_type, reactions_count, likes_count, comments_count,shares_count)
+              dfTmp <- data.frame(id, idPage, name, message, picture, link, created_time, status_type, reactions_count, likes_count, comments_count,shares_count)
               df <- rbind(df, dfTmp)
         }
 
