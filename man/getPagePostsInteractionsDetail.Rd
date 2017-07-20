@@ -7,14 +7,14 @@
 getPagePostsInteractionsDetail(id)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{id}{Facebook post id}
 }
 \description{
-This function allows pretty printing of values
+This function return number od reactions on specifick post.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+reactions <- getPagePostsInteractionsDetail()
+
 
 }
 \keyword{printLog}

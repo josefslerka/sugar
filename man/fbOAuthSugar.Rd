@@ -11,7 +11,7 @@ fbOAuthSugar(app_id, app_secret, extended_permissions = FALSE,
 \item{love}{Do you love cats? Defaults to TRUE.}
 }
 \description{
-This function allows pretty printing of values aaa
+This function temporary replace fbOAuth. Now is depricated.
 }
 \examples{
 a <- "1234"

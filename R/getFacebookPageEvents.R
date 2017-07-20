@@ -1,6 +1,6 @@
 #' A getFacebookPageEvents Function
 #'
-#' This function allows pretty printing of values
+#' This function return last 25 events for Facebook Page 
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords printLog
 #' @export
@@ -8,12 +8,12 @@
 #' a <- "1234"
 #' cat_function(a)
 #' 
-getFacebookPageEvents <- function(forUsername,access_token) {
+getFacebookPageEvents <- function(forUsername) {
 				url <- paste0(
 				"https://graph.facebook.com/v2.7/",
 				forUsername,
 				"/events?fields=description,place,start_time,end_time,attending_count,interested_count,declined_count,maybe_count,name,noreply_count,category")
-				json <- callAPI(url = url, token = access_token) 
+				json <- callAPI(url = url, token = token) 
 
 				dfEvents <- data.frame()
 				for(i in json$data) {

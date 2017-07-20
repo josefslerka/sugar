@@ -7,14 +7,13 @@
 countryOfPage(idPage)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{idPage}{Facebook page id}
 }
 \description{
-This function allows pretty printing of values
+This function return most active country for page.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+topCountry <- countryOfPage("stunome")
 
 
 }

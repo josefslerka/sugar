@@ -1,12 +1,12 @@
 #' A getPagePostsInteractionsDetail Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function return number od reactions on specifick post.
+#' @param id Facebook post id
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' reactions <- getPagePostsInteractionsDetail()
+#' 
 #' 
 getPagePostsInteractionsDetail <- function(id) {
 

@@ -1,12 +1,11 @@
-#' A getReactions Function
+#' A getAttendingUsers Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function return list of people who are interested in event.
+#' @param id event id from Facebook
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' users <- getAttendingUsers("1972457919653234")
 #' 
 getInerestedUsers <- function(id) {
 		df <- data.frame()

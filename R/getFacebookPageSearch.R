@@ -1,6 +1,6 @@
 #' A getFacebookPageSearch Function
 #'
-#' This function allows pretty printing of values
+#' This function return first 25 results for Facebook Page search
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords printLog
 #' @export
@@ -17,7 +17,7 @@ getFacebookPageSearch <- function(query) {
 
 
 				
-				json <- callAPI(url = url, token = access_token) 
+				json <- callAPI(url = url, token = token) 
 
 				dfSearchPage <- data.frame()
 				for(i in json$data) {

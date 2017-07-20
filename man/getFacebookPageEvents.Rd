@@ -4,13 +4,13 @@
 \alias{getFacebookPageEvents}
 \title{A getFacebookPageEvents Function}
 \usage{
-getFacebookPageEvents(forUsername, access_token)
+getFacebookPageEvents(forUsername)
 }
 \arguments{
 \item{love}{Do you love cats? Defaults to TRUE.}
 }
 \description{
-This function allows pretty printing of values
+This function return last 25 events for Facebook Page
 }
 \examples{
 a <- "1234"

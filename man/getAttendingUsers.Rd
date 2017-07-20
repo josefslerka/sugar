@@ -2,19 +2,18 @@
 % Please edit documentation in R/getAttendingUsers.R
 \name{getAttendingUsers}
 \alias{getAttendingUsers}
-\title{A getReactions Function}
+\title{A getAttendingUsers Function}
 \usage{
 getAttendingUsers(id)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{id}{event id from Facebook}
 }
 \description{
-This function allows pretty printing of values
+This function return list of people who are attendinge event.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+users <- getAttendingUsers("1972457919653234")
 
 }
 \keyword{printLog}

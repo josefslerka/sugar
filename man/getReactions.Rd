@@ -7,14 +7,14 @@
 getReactions(id, type = "all")
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{id}{Facebook pages id.}
 }
 \description{
-This function allows pretty printing of values
+This function return data frame with list of engagers under post.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+postEngagers <- getReactions("stunome")
+
 
 }
 \keyword{printLog}

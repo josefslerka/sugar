@@ -1,12 +1,13 @@
 #' A get_comments Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function rerturn data frame with commenters and comments for vector with posts Ids.
+#' @param toAnalyze vector with posts ids.
+#' @param maxComments max count of likes under posts
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' toAnalyze <- "90002267161_10155520966952162"
+#' dfCommenters <- get_comments(toAnalyze, 1000)
 #' 
 
 

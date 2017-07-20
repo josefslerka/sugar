@@ -1,4 +1,4 @@
-#' A getPageNewByDate Function
+#' A getPostsByDate Function
 #'
 #' This function is depricated
 #' @param love Do you love cats? Defaults to TRUE.

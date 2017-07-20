@@ -2,7 +2,7 @@
 % Please edit documentation in R/getPostsByDate.R
 \name{getPostsByDate}
 \alias{getPostsByDate}
-\title{A getPageNewByDate Function}
+\title{A getPostsByDate Function}
 \usage{
 getPostsByDate(idPage, fromDate, toDate)
 }

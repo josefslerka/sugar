@@ -7,14 +7,16 @@
 get_comments(toAnalyze, maxComments = 1)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{toAnalyze}{vector with posts ids.}
+
+\item{maxComments}{max count of likes under posts}
 }
 \description{
-This function allows pretty printing of values
+This function rerturn data frame with commenters and comments for vector with posts Ids.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+toAnalyze <- "90002267161_10155520966952162"
+dfCommenters <- get_comments(toAnalyze, 1000)
 
 }
 \keyword{printLog}

@@ -11,7 +11,7 @@ overlapOutput(toAnalyze, mainPageList, analyzedFrom, analyzedTo, backgroundFrom,
 \item{love}{Do you love cats? Defaults to TRUE.}
 }
 \description{
-This function allows pretty printing of values
+This function return csv files with Smart Overlap
 }
 \examples{
 a <- "1234"

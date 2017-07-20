@@ -2,19 +2,18 @@
 % Please edit documentation in R/getInerestedUsers.R
 \name{getInerestedUsers}
 \alias{getInerestedUsers}
-\title{A getReactions Function}
+\title{A getAttendingUsers Function}
 \usage{
 getInerestedUsers(id)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{id}{event id from Facebook}
 }
 \description{
-This function allows pretty printing of values
+This function return list of people who are interested in event.
 }
 \examples{
-a <- "1234"
-cat_function(a)
+users <- getAttendingUsers("1972457919653234")
 
 }
 \keyword{printLog}

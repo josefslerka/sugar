@@ -1,12 +1,12 @@
 #' A getReactions Function
 #'
-#' This function allows pretty printing of values
-#' @param love Do you love cats? Defaults to TRUE.
+#' This function return data frame with list of engagers under post.
+#' @param id Facebook pages id.
 #' @keywords printLog
 #' @export
 #' @examples
-#' a <- "1234"
-#' cat_function(a)
+#' postEngagers <- getReactions("stunome")
+#' 
 #' 
 getReactions <- function(id, type = "all") {
 		df <- data.frame()

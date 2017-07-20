@@ -92,10 +92,6 @@ toAnalyze <- c(
 "93433992603",
 "956932017785575"
 
-  )
-
-
-toAnalyze <- c(
     "svobodni",
     "vaclavklausml",
     "HateFreeCulture",
@@ -104,6 +100,9 @@ toAnalyze <- c(
     "dsss.cz",
     "stranaprav"
 )
+
+
+
 # toAnalyze <- c("sobotka.bohuslav")
 dfPages <- getPagesDetail(toAnalyze)
 
@@ -112,8 +111,8 @@ comments <- "1" # comment downloading?
 likers <- "1" # likers downloading?
 engagers <- "0" # engagers downloading?
 
-fromDate <- "2017-06-01" # filter dataset by date
-untilDate <- "2017-07-01"# filter dataset by date
+fromDate <- "2017-07-01" # filter dataset by date
+untilDate <- "2017-07-17"# filter dataset by date
 retryAttempts <- 1 # number of retry
 
 
