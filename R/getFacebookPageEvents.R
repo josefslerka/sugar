@@ -1,7 +1,7 @@
 #' A getFacebookPageEvents Function
 #'
 #' This function return last 25 events for Facebook Page 
-#' @param love Do you love cats? Defaults to TRUE.
+#' @param forUsername Facebook id or Facebook username
 #' @keywords printLog
 #' @export
 #' @examples

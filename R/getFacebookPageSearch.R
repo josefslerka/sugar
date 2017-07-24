@@ -1,7 +1,7 @@
 #' A getFacebookPageSearch Function
 #'
 #' This function return first 25 results for Facebook Page search
-#' @param love Do you love cats? Defaults to TRUE.
+#' @param query search query
 #' @keywords printLog
 #' @export
 #' @examples

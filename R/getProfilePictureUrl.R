@@ -1,6 +1,6 @@
 #' A getProfilePictureUrl Function
 #'
-#' This function allows pretty printing of values
+#' This function return facebook user profile picture url
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords printLog
 #' @export
@@ -8,7 +8,7 @@
 #' a <- "1234"
 #' cat_function(a)
 #'  
-getProfilePictureUrl <- function(userId, token) {
+getProfilePictureUrl <- function(userId) {
 		urlProfilePicture <- paste0('https://graph.facebook.com/',
 			userId,
 			'?fields=picture.width(800)', sep="")
