@@ -3,5 +3,6 @@ Knihovna Sugar rozšiřuje možnosti knihovny <a href="https://github.com/pablob
 <h2>Instalace:</h2>
 <code>
 library(devtools)
-<br>install_github("josefslerka/sugar")
+\n
+install_github("josefslerka/sugar")
 </code>
