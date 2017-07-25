@@ -7,7 +7,7 @@
 getFacebookPageSearch(query)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{query}{search query}
 }
 \description{
 This function return first 25 results for Facebook Page search

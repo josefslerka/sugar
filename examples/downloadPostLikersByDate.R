@@ -101,6 +101,29 @@ toAnalyze <- c(
     "stranaprav"
 )
 
+toAnalyze <- c("spiegelonline",
+"tonline.de",
+"tagesschau",
+"WEB.DE",
+"focus.de",
+"nachrichtensender",
+"N24",
+"GMX.de",
+"bild",
+"welt",
+"HuffPostDE",
+"ZDFheute",
+"stern",
+"faz")
+
+
+"alternativefuerde",
+"SPD",
+"CDU",
+"CSU",
+"FDP",
+"linkspartei",
+"B90DieGruenen"
 
 
 # toAnalyze <- c("sobotka.bohuslav")
@@ -111,8 +134,8 @@ comments <- "0" # comment downloading?
 likers <- "1" # likers downloading?
 engagers <- "0" # engagers downloading?
 
-fromDate <- "2017-04-01" # filter dataset by date
-untilDate <- "2017-05-01"# filter dataset by date
+fromDate <- "2017-04-24" # filter dataset by date
+untilDate <- "2017-07-24"# filter dataset by date
 retryAttempts <- 1 # number of retry
 
 

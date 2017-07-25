@@ -7,7 +7,7 @@
 getFacebookPageEvents(forUsername)
 }
 \arguments{
-\item{love}{Do you love cats? Defaults to TRUE.}
+\item{forUsername}{Facebook id or Facebook username}
 }
 \description{
 This function return last 25 events for Facebook Page

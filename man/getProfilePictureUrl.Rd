@@ -4,13 +4,13 @@
 \alias{getProfilePictureUrl}
 \title{A getProfilePictureUrl Function}
 \usage{
-getProfilePictureUrl(userId, token)
+getProfilePictureUrl(userId)
 }
 \arguments{
 \item{love}{Do you love cats? Defaults to TRUE.}
 }
 \description{
-This function allows pretty printing of values
+This function return facebook user profile picture url
 }
 \examples{
 a <- "1234"

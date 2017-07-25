@@ -1,8 +1,8 @@
 Package: sugar
-Title: What the Package Does (one line, title case)
+Title: Sugar for your social data mining.
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Josef", "Slerka", email = "josef.slerka@gmail.com", role = c("aut", "cre"))
+Description: Library allow some data mining operations. Its extension of RFacebook library.
 License: What license is it under?
 LazyData: true
 RoxygenNote: 6.0.1.9000
