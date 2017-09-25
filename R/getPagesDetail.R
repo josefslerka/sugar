@@ -18,7 +18,7 @@ getPagesDetail <- function(toAnalyze) {
 
 			   	result <- tryCatch({
 					
-					json_file <- paste0(graphFacebook, i, "?fields=about,name,talking_about_count,fan_count", collapse="")
+					json_file <- paste0(graphFacebook, i, "?fields=id,about,name,talking_about_count,fan_count", collapse="")
 					json_data <- getURL(json_file)
 			        json_data <- callAPI(url = json_file, token = token) 
 					print(paste0(i, " ",json_data$name,sep=""))

@@ -17,7 +17,7 @@ getFacebookPageSearch <- function(query) {
 
 
 				
-				json <- callAPI(url = url, token = token) 
+				json <- callAPI(url = url, token = access_token) 
 
 				dfSearchPage <- data.frame()
 				for(i in json$data) {

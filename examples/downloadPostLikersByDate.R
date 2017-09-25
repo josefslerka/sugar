@@ -116,26 +116,46 @@ toAnalyze <- c("spiegelonline",
 "stern",
 "faz")
 
-
+toAnalyze <- c(
 "alternativefuerde",
 "SPD",
 "CDU",
 "CSU",
 "FDP",
 "linkspartei",
-"B90DieGruenen"
+"B90DieGruenen",
+"proputinpartei"
+)
+
+toAnalyze <- c("achgutcom",
+"DIE.WELTWOCHE",
+"Metropolico",
+"KenFM.de",
+"kopponline",
+"245523645611787",
+"NewsFrontDE",
+"DeutscheWirtschaftsNachrichten",
+"neopresse",
+"journalistenwatch",
+"EpochTimes.Deutsch",
+"contramagazin",
+"jungefreiheit",
+"Compact.Magazin",  
+"sputnik.deutschland",
+"rtdeutsch",
+"dieUnbestechlichenNews")
 
 
 # toAnalyze <- c("sobotka.bohuslav")
 dfPages <- getPagesDetail(toAnalyze)
 
 # configuration 
-comments <- "0" # comment downloading?
+comments <- "1" # comment downloading?
 likers <- "1" # likers downloading?
 engagers <- "0" # engagers downloading?
 
-fromDate <- "2017-04-24" # filter dataset by date
-untilDate <- "2017-07-24"# filter dataset by date
+fromDate <- "2017-09-01" # filter dataset by date
+untilDate <- "2017-09-22"# filter dataset by date
 retryAttempts <- 1 # number of retry
 
 
