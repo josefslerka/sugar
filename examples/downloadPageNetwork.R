@@ -9,7 +9,7 @@ library("sugar")
   
 
 ##### Network of Pages
-token <- fbOAuth(app_id="105261629503772", app_secret="3ae28d93ced1153e5c1a4142f1686a38")
+access_token <- fbOAuth(app_id="105261629503772", app_secret="3ae28d93ced1153e5c1a4142f1686a38")
 Sys.sleep(4)
 graphFacebook = "https://graph.facebook.com/v2.6/"
 
@@ -26,7 +26,7 @@ for (i in toAnalyze) {
 
     requests <- tryCatch({
         json_file <- paste0(graphFacebook, i, "?fields=name,id,category,cover,talking_about_count,fan_count", collapse = "")
-        json_data <- callAPI(url = json_file, token = token) 
+        json_data <- callAPI(url = json_file, token = access_token) 
         cat(i)
         cat("\n")
         cat(json_data$name)
