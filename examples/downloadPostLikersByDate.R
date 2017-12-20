@@ -98,7 +98,30 @@ toAnalyze <- c(
     "stredoevropan.cz",
     "lubomir.zaoralek",
     "dsss.cz",
-    "stranaprav"
+    "stranaprav",
+
+    "ceskatelevize",
+    "danielhermanofficial",
+"svobodakdu",
+"SeznamZpravy",
+"Gameballcz",
+"reporterict",
+"DVTV.cz",
+"iROZHLAS.cz",
+"SeznamZpravy",
+"farskyjansemily",
+"britskelisty",
+"173305846086912",
+"karel.schwarzenberg",
+"Marketa.AdamovaTOP09",
+"mach.svobodni",
+"zenaazivot",
+"casopisKatka",
+"bleskprozeny",
+"tvbarrandov",
+"MarieClaireCZ",
+"ELLE.cz",
+"denikmetro"
 )
 
 toAnalyze <- c("spiegelonline",
@@ -145,17 +168,139 @@ toAnalyze <- c("achgutcom",
 "rtdeutsch",
 "dieUnbestechlichenNews")
 
+toAnalyze <- c("www.hlavnespravy.sk",
+"Infovojna",
+"medzicas",
+"ZEMAVEK",
+"pravdadennik",
+"protiprud.sk",
+"teraz.sk",
+"fakt24sk",
+"slovenskydennik",
+"ParlamentneListy.sk",
+"SlobodnyVysielac",
+"DobreNoviny",
+"noviny.sk",
+"novycas",
+"TelevizneNoviny",
+"Aktuality.sk",
+"plusjedenden",
+"spravy.rtvs",
+"plus7dni",
+"www.info.sk",
+"televiziaTA3",
+"Aktuality.sk",
+"sme.sk",
+"projektn.sk",
+"hospodarskenoviny")
 
-# toAnalyze <- c("sobotka.bohuslav")
+toAnalyze <- c("tyzdennik.trend",
+"tyzden.sk")
+
+toAnalyze <- c(
+"OrigoHirek",
+"hirado.hu",
+"ripost.hu",
+"magyaridoknapilap",
+"tv2hun",
+"echotelevizio",
+"mr1kossuthradio",
+"magyarhirlap",
+"888ponthu",
+"pestisracok.hu",
+"mandiner.hu",
+"Indexhu",
+"444.hu",
+"nepszavaonline",
+"atv.hu",
+"mno.hu",
+"hirtv",
+"hvghu",
+"168ora",
+"zoomponthu",
+"24ponthu",
+"AlfahirHirportal",
+"orientalista.hu",
+"atomenergiainfo",
+"oroszhirek.hu"
+  )
+
+toAnalyze <- c("100683176313",
+"108655765835225",
+"114811848586566",
+"115991108439011",
+"120250914680166",
+"123858471641",
+"135144949863739",
+"137067469008",
+"137301989386",
+"139079856198676",
+"1401698296515625",
+"142069753862",
+"1437121429870192",
+"143886599126215",
+"1469427909957890",
+"1489109218022130",
+"1491040544530242",
+"1609110509368821",
+"1737035843238717",
+"176546515755264",
+"180415232570",
+"199172316950958",
+"202451429883",
+"203833483473",
+"206407509818",
+"210778132327279",
+"290903524034",
+"340208672684617",
+"342117105834888",
+"34825122262",
+"363829437158226",
+"373496142743854",
+"447515225396176",
+"467091406762219",
+"50309511751",
+"51828152685",
+"52479821102",
+"605295742903171",
+"615247491825200",
+"61731121893",
+"623521487687579",
+"694807680694998",
+"698331456928330",
+"751578688203935",
+"825350200914537",
+"857381140982848")
+
+toAnalyze <- c(
+"drahosjiri",
+"prezidentcr",
+"MirekPrezident.cz",
+"mhmamenavic",
+"AndrejBabis",
+"anobudelip"
+)
+
+
+toAnalyze <- c("drahosjiri",
+"PavelFischerOfficial",
+"budmehrdi",
+"MarekNaHrad",
+"mhmamenavic",
+"hynek2018",
+"kulhaneknahrad",
+"MirekPrezident.cz",
+"prezidentcr")
+
 dfPages <- getPagesDetail(toAnalyze)
 
 # configuration 
-comments <- "1" # comment downloading?
+comments <- "0" # comment downloading?
 likers <- "1" # likers downloading?
 engagers <- "0" # engagers downloading?
 
 fromDate <- "2017-09-01" # filter dataset by date
-untilDate <- "2017-09-22"# filter dataset by date
+untilDate <- "2017-12-15"# filter dataset by date
 retryAttempts <- 1 # number of retry
 
 
@@ -231,6 +376,5 @@ if(length(failedPages) > 0) {
   cat("#### Failed pages:\n")
   cat(paste(shQuote(failedPages, type="cmd"), collapse=",\n"))
 }
-
 
 
