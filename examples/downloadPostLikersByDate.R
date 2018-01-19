@@ -121,7 +121,16 @@ toAnalyze <- c(
 "tvbarrandov",
 "MarieClaireCZ",
 "ELLE.cz",
-"denikmetro"
+"denikmetro",
+"drahosjiri",
+"PavelFischerOfficial",
+"budmehrdi",
+"MarekNaHrad",
+"mhmamenavic",
+"hynek2018",
+"kulhaneknahrad",
+"MirekPrezident.cz",
+"prezidentcr"
 )
 
 toAnalyze <- c("spiegelonline",
@@ -292,6 +301,8 @@ toAnalyze <- c("drahosjiri",
 "MirekPrezident.cz",
 "prezidentcr")
 
+
+# toAnalyze <- c("316957798794325")
 dfPages <- getPagesDetail(toAnalyze)
 
 # configuration 
@@ -299,8 +310,8 @@ comments <- "0" # comment downloading?
 likers <- "1" # likers downloading?
 engagers <- "0" # engagers downloading?
 
-fromDate <- "2017-09-01" # filter dataset by date
-untilDate <- "2017-12-15"# filter dataset by date
+fromDate <- "2017-12-17" # filter dataset by date
+untilDate <- "2018-01-17"# filter dataset by date
 retryAttempts <- 1 # number of retry
 
 
