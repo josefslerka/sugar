@@ -299,93 +299,94 @@ toAnalyze <- c("drahosjiri",
 "hynek2018",
 "kulhaneknahrad",
 "MirekPrezident.cz",
-"prezidentcr")
+"prezidentcr",
+"zemanznovu")
 
 
 # toAnalyze <- c("316957798794325")
 dfPages <- getPagesDetail(toAnalyze)
 
 # configuration 
-comments <- "0" # comment downloading?
+comments <- "1" # comment downloading?
 likers <- "1" # likers downloading?
 engagers <- "0" # engagers downloading?
 
-fromDate <- "2017-12-17" # filter dataset by date
-untilDate <- "2018-01-17"# filter dataset by date
+fromDate <- "2017-12-01" # filter dataset by date
+untilDate <- "2018-01-23"# filter dataset by date
 retryAttempts <- 1 # number of retry
 
 
-toDownload <- unique(dfPages$id)
+  toDownload <- unique(dfPages$id)
 
-failedPages <- c()
-for(PagetoAnalyze in toDownload) {
+  failedPages <- c()
+  for(PagetoAnalyze in toDownload) {
 
-  printLog(PagetoAnalyze)
-  ###########################################
-  # 1. stazeni postu z analyzovane stranky  #
-  ###########################################
-  #fileName <- paste0(PagetoAnalyze, ".csv", collapse = "")
-  
-  retryResult <- try(
-    retry({
-      
-      dfPagePosts <- getPostsByDate(PagetoAnalyze,fromDate,untilDate)
-      dfPagePosts$date <- format(as.POSIXlt(dfPagePosts$created_time))
+    printLog(PagetoAnalyze)
+    ###########################################
+    # 1. stazeni postu z analyzovane stranky  #
+    ###########################################
+    #fileName <- paste0(PagetoAnalyze, ".csv", collapse = "")
+    
+    retryResult <- try(
+      retry({
+        
+        dfPagePosts <- getPostsByDate(PagetoAnalyze,fromDate,untilDate)
+        dfPagePosts$date <- format(as.POSIXlt(dfPagePosts$created_time))
 
-      #  ulozi soubor s posty stranky
-      fileName <- paste0(PagetoAnalyze, "_posts.csv", collapse = "")
-      write.csv(dfPagePosts, fileName)
-      
-      dfPagePosts$likes_count <- as.numeric(dfPagePosts$likes_count)
-      dfPagePosts$comments_count <- as.numeric(dfPagePosts$comments_count)
+        #  ulozi soubor s posty stranky
+        fileName <- paste0(PagetoAnalyze, "_posts.csv", collapse = "")
+        write.csv(dfPagePosts, fileName)
+        
+        dfPagePosts$likes_count <- as.numeric(dfPagePosts$likes_count)
+        dfPagePosts$comments_count <- as.numeric(dfPagePosts$comments_count)
 
-      maxLikes <- max(dfPagePosts$likes_count)
-      maxComments <- max(dfPagePosts$comments_count)
-      
-
-
-      printLog(PagetoAnalyze, " complete")
-      cat(nrow(dfPagePosts), " posts\n", "maxLikes: ", maxLikes, "\nmaxComments: ", maxComments, "\n", sep="")
-      if (maxLikes < 0 || maxComments < 0) {
-        stop("Got invalid maxLikes or maxComments, let's try this again.")
-      }
-Sys.sleep(4)      
-      #### likers
-      if (likers == "1") {
-      dfLikes <- get_likers(dfPagePosts$id, maxLikes)
-      # ulozi seznam lajkujicich a posty, ktere lajkovali
-      fileName <- paste0(PagetoAnalyze, "_likes.csv", collapse = "")
-      write.csv(dfLikes, fileName)
-      }
-
-      #### engagers
-      if (engagers == "1") {
-      dfEngagers <- get_engagers(dfPagePosts$id, maxLikes)
-      # ulozi seznam lajkujicich a posty, ktere lajkovali
-      fileName <- paste0(PagetoAnalyze, "_engagers.csv", collapse = "")
-      write.csv(dfEngagers, fileName)
-      }
+        maxLikes <- max(dfPagePosts$likes_count)
+        maxComments <- max(dfPagePosts$comments_count)
+        
 
 
+        printLog(PagetoAnalyze, " complete")
+        cat(nrow(dfPagePosts), " posts\n", "maxLikes: ", maxLikes, "\nmaxComments: ", maxComments, "\n", sep="")
+        if (maxLikes < 0 || maxComments < 0) {
+          stop("Got invalid maxLikes or maxComments, let's try this again.")
+        }
+  Sys.sleep(4)      
+        #### likers
+        if (likers == "1") {
+        dfLikes <- get_likers(dfPagePosts$id, maxLikes)
+        # ulozi seznam lajkujicich a posty, ktere lajkovali
+        fileName <- paste0(PagetoAnalyze, "_likes.csv", collapse = "")
+        write.csv(dfLikes, fileName)
+        }
 
-Sys.sleep(4)
-      #### stazeni komentaru
-      if (comments == "1") {
-        dfComments <- get_comments(dfPagePosts$id, maxComments)
-        fileName <- paste0(PagetoAnalyze, "_comments.csv", collapse = "")
-        write.csv(dfComments, fileName)
-      }
-    }, attempts = retryAttempts)
-  )
-  if(class(retryResult) == "try-error") {
-    failedPages = c(failedPages, PagetoAnalyze)
-    warning("Failed page: ", PagetoAnalyze)
+        #### engagers
+        if (engagers == "1") {
+        dfEngagers <- get_engagers(dfPagePosts$id, maxLikes)
+        # ulozi seznam lajkujicich a posty, ktere lajkovali
+        fileName <- paste0(PagetoAnalyze, "_engagers.csv", collapse = "")
+        write.csv(dfEngagers, fileName)
+        }
+
+
+
+  Sys.sleep(4)
+        #### stazeni komentaru
+        if (comments == "1") {
+          dfComments <- get_comments(dfPagePosts$id, maxComments)
+          fileName <- paste0(PagetoAnalyze, "_comments.csv", collapse = "")
+          write.csv(dfComments, fileName)
+        }
+      }, attempts = retryAttempts)
+    )
+    if(class(retryResult) == "try-error") {
+      failedPages = c(failedPages, PagetoAnalyze)
+      warning("Failed page: ", PagetoAnalyze)
+    }
   }
-}
 
-if(length(failedPages) > 0) {
-  cat("#### Failed pages:\n")
-  cat(paste(shQuote(failedPages, type="cmd"), collapse=",\n"))
-}
+  if(length(failedPages) > 0) {
+    cat("#### Failed pages:\n")
+    cat(paste(shQuote(failedPages, type="cmd"), collapse=",\n"))
+  }
 
 
